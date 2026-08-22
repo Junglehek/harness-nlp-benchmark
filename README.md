@@ -17,13 +17,15 @@
 
 ## 实验设计
 
-### 3 条件交叉矩阵
+### 核心矩阵（3 条件 + 动态升级）
 
 | 条件 | Harness | 底层模型 | 测量目标 |
 |:---:|:---|:---|:---|
 | A | DeepSeek Harness | DeepSeek-V4 | 基线 |
-| B | DeepSeek Harness | GPT-4o | **模型效应**（同 harness，换模型） |
-| C | OpenAI Codex | GPT-4o/4.5 | **Harness 效应**（同模型，换 harness） |
+| B | DeepSeek Harness | GPT-5.6 Terra | **模型效应**（同 harness，换模型） |
+| C | OpenAI Codex | GPT-5.6 Terra | **Harness 效应**（同模型，换 harness） |
+
+> **动态升级**：Phase 1 实测 Codex 能否接入 DeepSeek-V4。若验证通过，升级为 **2×2 全交叉（+ 条件 D：Codex+V4，共 60 次运行）**，效应分离更严谨；若失败，保持 3 条件（45 次运行）。
 
 ### 控制变量
 - **超时**：10 分钟/任务
@@ -66,7 +68,9 @@ cp .env.example .env
 # 4. 运行单个任务预实验
 python scripts/run_task.py --task t5_chnsenticorp --condition A --dry-run
 
-# 5. 运行完整评测（5 任务 × 3 条件 × 3 遍）
+# 5. 运行完整评测
+# 3 条件：5 任务 × 3 条件 × 3 遍 = 45 次
+# 2×2 全交叉（若条件 D 验证通过）：5 任务 × 4 条件 × 3 遍 = 60 次
 python scripts/run_benchmark.py --config benchmark.yaml
 ```
 
@@ -95,7 +99,7 @@ harness-nlp-benchmark/
 │   └── evaluate.py
 ├── results/                  # 运行结果与轨迹
 │   ├── pilot/                # 预实验数据
-│   └── final/                # 正式实验数据（45 次运行）
+│   └── final/                # 正式实验数据
 ├── log/                      # 开发过程记录
 ├── docs/                     # 文档
 │   └── setup.md
@@ -108,13 +112,13 @@ harness-nlp-benchmark/
 
 ## 初步结果（待更新）
 
-| 指标 | DSH-V4 (A) | DSH-GPT4o (B) | Codex-GPT4o (C) |
-|:---|:---:|:---:|:---:|
-| T5 成功率 | — | — | — |
-| T5 平均步数 | — | — | — |
-| T5 平均 Token | — | — | — |
-| **模型效应** (A vs B) | — | — | — |
-| **Harness 效应** (B vs C) | — | — | — |
+| 指标 | DSH-V4 (A) | DSH-Terra (B) | Codex-Terra (C) | Codex-V4 (D) |
+|:---|:---:|:---:|:---:|:---:|
+| T5 成功率 | — | — | — | 动态条件 |
+| T5 平均步数 | — | — | — | 动态条件 |
+| T5 平均 Token | — | — | — | 动态条件 |
+| **模型效应** | — | — | — | — |
+| **Harness 效应** | — | — | — | — |
 
 > 预实验进行中，预计 2026-08-30 更新首批数据。
 
@@ -132,9 +136,17 @@ harness-nlp-benchmark/
 
 - **Agent 框架**：DeepSeek Harness (v0.1.0), OpenAI Codex CLI
 - **模型后端**：DeepSeek-V4, GPT-5.6 Terra
-- **评测**：dsh-eval, custom `evaluator.py`, Claude Sonnet (LLM-as-Judge)
+- **评测**：dsh-eval, custom `evaluator.py`, Claude Sonnet (LLM-as-Judge, temperature=0)
 - **语言**：Python 3.10+, Node.js 20+
 - **数据**：HuggingFace Datasets, statmt.org
+
+---
+
+## 预算
+
+- **3 条件（45 次运行）**：约 ¥100 以内
+- **2×2 全交叉（60 次运行，若条件 D 验证通过）**：约 ¥85–120
+- 预实验（T5 × 3 条件 × 1 遍）先实测单次成本，再决定全量规模
 
 ---
 
@@ -145,9 +157,9 @@ harness-nlp-benchmark/
 ```bibtex
 @misc{harness-nlp-benchmark,
   title={Harness-NLP-Benchmark: A Pilot Study on Harness Effects in NLP Data Engineering},
-  author={<Boze Lin>},
+  author={<你的名字>},
   year={2026},
-  howpublished={\url{https://github.com/<Junglehek>/harness-nlp-benchmark}},
+  howpublished={\url{https://github.com/<你的用户名>/harness-nlp-benchmark}},
 }
 ```
 
@@ -159,8 +171,9 @@ harness-nlp-benchmark/
 ## 进度
 
 - [x] 实验设计定稿（2026-08-23）
+- [x] GitHub 仓库 + README 发布（2026-08-23）
 - [ ] Phase 1: 环境准备与预实验
-- [ ] Phase 2: 基线测试（45 次运行）
+- [ ] Phase 2: 基线测试（45/60 次运行）
 - [ ] Phase 3: 效应分离分析
 - [ ] Phase 4: 报告撰写与开源发布
 
