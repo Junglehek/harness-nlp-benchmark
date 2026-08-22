@@ -157,9 +157,9 @@ harness-nlp-benchmark/
 ```bibtex
 @misc{harness-nlp-benchmark,
   title={Harness-NLP-Benchmark: A Pilot Study on Harness Effects in NLP Data Engineering},
-  author={<你的名字>},
+  author={<Boze Lin>},
   year={2026},
-  howpublished={\url{https://github.com/<你的用户名>/harness-nlp-benchmark}},
+  howpublished={\url{https://github.com/<Junglehek>/harness-nlp-benchmark}},
 }
 ```
 
