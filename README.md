@@ -131,7 +131,7 @@ harness-nlp-benchmark/
 ## 技术栈
 
 - **Agent 框架**：DeepSeek Harness (v0.1.0), OpenAI Codex CLI
-- **模型后端**：DeepSeek-V4, GPT-4o/4.5
+- **模型后端**：DeepSeek-V4, GPT-5.6 Terra
 - **评测**：dsh-eval, custom `evaluator.py`, Claude Sonnet (LLM-as-Judge)
 - **语言**：Python 3.10+, Node.js 20+
 - **数据**：HuggingFace Datasets, statmt.org
