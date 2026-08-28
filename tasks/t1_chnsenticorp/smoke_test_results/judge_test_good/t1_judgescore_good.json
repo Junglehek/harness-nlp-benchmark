@@ -1,0 +1,69 @@
+{
+  "task": "T1",
+  "run_dir": "/Users/Apple/Desktop/DownTheRoad/Harness对比小尝试/harness-nlp-benchmark/tasks/t1_chnsenticorp/runs/t1/run_default",
+  "judge_model": "anthropic/claude-sonnet-5",
+  "temperature": 0,
+  "repeat": 3,
+  "score_source": "median_of_3",
+  "dimensions": {
+    "report_integrity": {
+      "label": "报告完整性",
+      "score": 60.0,
+      "max": 100,
+      "weight": 0.3,
+      "raw_scores": [
+        60.0,
+        72.0,
+        55.0
+      ]
+    },
+    "statistical_correctness": {
+      "label": "统计指标计算正确性",
+      "score": 88.0,
+      "max": 100,
+      "weight": 0.3,
+      "raw_scores": [
+        90.0,
+        88.0,
+        85.0
+      ]
+    },
+    "format_compliance": {
+      "label": "格式规范性",
+      "score": 82.0,
+      "max": 100,
+      "weight": 0.2,
+      "raw_scores": [
+        85.0,
+        82.0,
+        82.0
+      ]
+    },
+    "readability": {
+      "label": "可读性",
+      "score": 72.0,
+      "max": 100,
+      "weight": 0.1,
+      "raw_scores": [
+        70.0,
+        75.0,
+        72.0
+      ]
+    },
+    "analysis_depth": {
+      "label": "分析深度",
+      "score": 28.0,
+      "max": 100,
+      "weight": 0.1,
+      "raw_scores": [
+        30.0,
+        28.0,
+        28.0
+      ]
+    }
+  },
+  "judge_total": 70.8,
+  "judge_score_10": 7.08,
+  "reasoning": "Perfect accuracy case; metrics match autoscore but error analysis thin due to no errors",
+  "status": "OK"
+}

@@ -1,0 +1,12 @@
+[
+  {"text_id": 1, "raw_text": "这家酒店很好"},
+  {"text_id": 2, "raw_text": "房间太脏了"},
+  {"text_id": 3, "raw_text": "服务态度不错"},
+  {"text_id": 4, "raw_text": "床单有污渍"},
+  {"text_id": 5, "raw_text": "早餐很丰富"},
+  {"text_id": 6, "raw_text": "空调坏了"},
+  {"text_id": 7, "raw_text": "位置很方便"},
+  {"text_id": 8, "raw_text": "噪音太大"},
+  {"text_id": 9, "raw_text": "性价比很高"},
+  {"text_id": 10, "raw_text": "前台态度差"}
+]

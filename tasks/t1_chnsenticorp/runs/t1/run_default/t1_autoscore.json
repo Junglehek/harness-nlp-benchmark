@@ -1,0 +1,103 @@
+{
+  "task": "T1",
+  "dataset": "ChnSentiCorp",
+  "run_dir": "/Users/Apple/Desktop/DownTheRoad/Harness对比小尝试/harness-nlp-benchmark/tasks/t1_chnsenticorp/runs/t1/run_default",
+  "gold_total": 10,
+  "format_score": {
+    "per_file": {
+      "t1_classification.json": 6.0,
+      "t1_metrics.json": 6.0,
+      "t1_confusion_matrix.json": 6.0,
+      "t1_distribution.json": 6.0,
+      "t1_error_analysis.md": 6.0
+    },
+    "total_30": 30.0,
+    "final_27": 27.0,
+    "issues": []
+  },
+  "accuracy": 1.0,
+  "accuracy_score": 63.0,
+  "auto_total": 90.0,
+  "recomputed": {
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "confusion": {
+      "tp_count": 5,
+      "fp_count": 0,
+      "fn_count": 0,
+      "tn_count": 5
+    },
+    "distribution": {
+      "pred_positive_count": 5,
+      "pred_negative_count": 5,
+      "pred_positive_ratio": 0.5
+    }
+  },
+  "consistency_check_for_judge": {
+    "metrics": {
+      "accuracy": {
+        "reported": 1.0,
+        "recomputed": 1.0,
+        "consistent": true
+      },
+      "precision": {
+        "reported": 1.0,
+        "recomputed": 1.0,
+        "consistent": true
+      },
+      "recall": {
+        "reported": 1.0,
+        "recomputed": 1.0,
+        "consistent": true
+      },
+      "f1": {
+        "reported": 1.0,
+        "recomputed": 1.0,
+        "consistent": true
+      }
+    },
+    "confusion": {
+      "tp_count": {
+        "reported": 5,
+        "recomputed": 5,
+        "consistent": true
+      },
+      "fp_count": {
+        "reported": 0,
+        "recomputed": 0,
+        "consistent": true
+      },
+      "fn_count": {
+        "reported": 0,
+        "recomputed": 0,
+        "consistent": true
+      },
+      "tn_count": {
+        "reported": 5,
+        "recomputed": 5,
+        "consistent": true
+      }
+    },
+    "distribution": {
+      "pred_positive_count": {
+        "reported": 5,
+        "recomputed": 5,
+        "consistent": true
+      },
+      "pred_negative_count": {
+        "reported": 5,
+        "recomputed": 5,
+        "consistent": true
+      },
+      "pred_positive_ratio": {
+        "reported": 0.5,
+        "recomputed": 0.5,
+        "consistent": true
+      }
+    },
+    "summary": "8/8 项一致（误差<1% 判一致）"
+  },
+  "notes": []
+}

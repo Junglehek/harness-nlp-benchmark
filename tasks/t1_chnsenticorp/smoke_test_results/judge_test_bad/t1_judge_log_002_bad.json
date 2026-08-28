@@ -1,0 +1,14 @@
+{
+  "attempt": 2,
+  "timestamp": "2026-08-28T19:50:01+0800",
+  "response": "{\"report_integrity\":10,\"statistical_correctness\":15,\"format_compliance\":15,\"readability\":10,\"analysis_depth\":5,\"reasoning\":\"error_analysis.md几乎为空，无错误样本、分类、建议；报告未呈现任何指标数值\"}",
+  "api_error": null,
+  "parse_status": "OK",
+  "parsed_scores": {
+    "report_integrity": 10.0,
+    "statistical_correctness": 15.0,
+    "format_compliance": 15.0,
+    "readability": 10.0,
+    "analysis_depth": 5.0
+  }
+}

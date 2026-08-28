@@ -1,0 +1,14 @@
+{
+  "attempt": 1,
+  "timestamp": "2026-08-28T19:45:54+0800",
+  "response": "{\"report_integrity\":60,\"statistical_correctness\":90,\"format_compliance\":85,\"readability\":70,\"analysis_depth\":30,\"reasoning\":\"Perfect accuracy case; metrics match autoscore but error analysis thin due to no errors\"}",
+  "api_error": null,
+  "parse_status": "OK",
+  "parsed_scores": {
+    "report_integrity": 60.0,
+    "statistical_correctness": 90.0,
+    "format_compliance": 85.0,
+    "readability": 70.0,
+    "analysis_depth": 30.0
+  }
+}
